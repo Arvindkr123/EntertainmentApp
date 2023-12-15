@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { config } from "../../config/config";
 import CardMovies from "../../components/CardMovies";
+import PaginationComponent from "../../components/Pagination";
 
 const HomeContainer = () => {
   const [content, setContent] = useState([]);
@@ -25,6 +26,14 @@ const HomeContainer = () => {
     getTrendingData();
   }, []);
 
+  useEffect(() => {
+    getTrendingData();
+  }, [pageNo]);
+
+  const handleClick = (number) => {
+    setPageNo(number);
+  };
+
   return (
     <main style={{ margin: 0 }} className="homePage">
       <Container>
@@ -37,13 +46,23 @@ const HomeContainer = () => {
           </Col>
 
           {/* movie of content showing here... */}
-          {content && content.length > 0
-            ? content.map((item) => {
-                return (
-                  <CardMovies key={item.id} data={item} mediaType={"tv"} />
-                );
-              })
-            : "Loading Content..."}
+          {content && content.length > 0 ? (
+            content.map((item) => {
+              return <CardMovies key={item.id} data={item} mediaType={"tv"} />;
+            })
+          ) : (
+            <h2>"Loading Content..."</h2>
+          )}
+
+          {paginationNumber && paginationNumber > 1 ? (
+            <PaginationComponent
+              maxnum={paginationNumber}
+              activenum={pageNo}
+              handleClick={handleClick}
+            />
+          ) : (
+            ""
+          )}
         </Row>
       </Container>
     </main>
