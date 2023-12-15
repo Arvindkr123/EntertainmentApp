@@ -1,6 +1,8 @@
-import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+
 const HeaderComponents = () => {
   const navData = [
     { title: "Home", link: "/" },
@@ -12,21 +14,22 @@ const HeaderComponents = () => {
   ];
   return (
     <header className="header">
-      <Navbar bg="dark" expand="lg">
-        <Container>
-          <Navbar.Brand>My Entertainment</Navbar.Brand>
+      <Navbar expand="lg" bg="dark" data-bs-theme="dark">
+        <Container fluid>
+          <Navbar.Brand>Entertainment</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="me-auto my-2 my-lg-0"
+              className="me-auto my-2 my-lg-0 navbar"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              {navData.map((item) => {
+              {/* Mapping through navData to create NavLink components */}
+              {navData.map((item, i) => {
                 return (
-                  <Nav key={item.title}>
-                    <Link to={item.link}>{item.title}</Link>
-                  </Nav>
+                  <Link className="px-2 list-item" key={i} to={item.link}>
+                    {item.title}
+                  </Link>
                 );
               })}
             </Nav>
