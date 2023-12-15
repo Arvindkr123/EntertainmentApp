@@ -20,7 +20,6 @@ const RouteComponent = () => {
         <Route path="/movies" element={<MoviesContainer />} />
         <Route path="/series" element={<TvSeriesContainer />} />
         <Route path="/search" element={<SearchContainer />} />
-        <Route path="/contact" element={<ContactContainer />} />
         <Route
           path="/details/:movieId/:mediaType/"
           element={<DetailsContainer />}

@@ -9,7 +9,6 @@ const HeaderComponents = () => {
     { title: "Movies", link: "/movies" },
     { title: "Tv Series", link: "/series" },
     { title: "Search", link: "/search" },
-    { title: "Contact", link: "/contact" },
     { title: "About", link: "/about" },
   ];
   return (
