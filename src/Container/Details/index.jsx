@@ -4,6 +4,7 @@ import "./details.css";
 import axios from "axios";
 import { config, img_300, img_not_available } from "../../config/config";
 import { Col, Container, Row } from "react-bootstrap";
+import DarkVariantExample from "../../components/Carousel";
 
 const DetailsContainer = () => {
   const { movieId, mediaType } = useParams();
@@ -16,14 +17,6 @@ const DetailsContainer = () => {
       : content && content.title && content.title !== ""
       ? content.title
       : "";
-
-  // const id = params.movieId || "";
-  // const _media_type =
-  //   params && params.mediatype && params.mediatype !== ""
-  //     ? params.mediatype.toLowerCase()
-  //     : "";
-
-  // console.log(movieId, mediaType);
 
   const fetchData = async () => {
     try {
@@ -174,10 +167,11 @@ const DetailsContainer = () => {
             <Container>
               <Row>
                 <Col className="col-12">
-                  {credits && credits.length > 0
-                    ? // <DarkVariantExample data={credits} />
-                      ""
-                    : "Lading data..."}
+                  {credits && credits.length > 0 ? (
+                    <DarkVariantExample data={credits} />
+                  ) : (
+                    "Lading data..."
+                  )}
                 </Col>
               </Row>
             </Container>
