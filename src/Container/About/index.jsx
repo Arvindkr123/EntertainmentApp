@@ -1,7 +1,36 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 const AboutContainer = () => {
-  return <div>AboutContainer</div>;
+  return (
+    <Container>
+      <Row>
+        <Col className="pd50">
+          <h1>Hii My Name is Arvind Kumar</h1>
+          <p>Adding stuff related to this webApplication</p>
+          <p>Movie API Home Page Url :- https://www.themoviedb.org/</p>
+          <p>Movie API Key url :- https://www.themoviedb.org/settings/api</p>
+          <p>
+            Movie API Document Page Url :-
+            https://www.themoviedb.org/documentation/api
+          </p>
+          <p>React Bootstrap Page Url :- React Bootstrap</p>
+          <p>
+            Bootstrap Icons Page Url :-
+            https://react-icons.github.io/react-icons/icons?name=bs
+          </p>
+          <p>Axios Page Url :- https://www.npmjs.com/package/axios</p>
+          <p>
+            React Pagination :- https://www.npmjs.com/package/react-paginate
+          </p>
+          <p>
+            React Alice Carouse :-
+            https://www.npmjs.com/package/react-alice-carousel
+          </p>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default AboutContainer;
