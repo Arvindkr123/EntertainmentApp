@@ -3,9 +3,9 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 const HeaderComponents = () => {
   const navData = [
-    { title: "Home", link: "/home" },
+    { title: "Home", link: "/" },
     { title: "Movies", link: "/movies" },
-    { title: "TvSeries", link: "/series" },
+    { title: "Tv Series", link: "/series" },
     { title: "Search", link: "/search" },
     { title: "Contact", link: "/contact" },
     { title: "About", link: "/about" },
@@ -24,7 +24,7 @@ const HeaderComponents = () => {
             >
               {navData.map((item) => {
                 return (
-                  <Nav key={item.name}>
+                  <Nav key={item.title}>
                     <Link to={item.link}>{item.title}</Link>
                   </Nav>
                 );
