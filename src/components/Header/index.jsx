@@ -15,16 +15,16 @@ const HeaderComponents = () => {
       <Navbar bg="dark" expand="lg">
         <Container>
           <Navbar.Brand>My Entertainment</Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar-scroll" />
-          <Navbar.Collapse id="navbar-scroll">
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
-              style={{ maxWidth: "100px" }}
+              style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              {navData.map((item, i) => {
+              {navData.map((item) => {
                 return (
-                  <Nav key={i}>
+                  <Nav key={item.name}>
                     <Link to={item.link}>{item.title}</Link>
                   </Nav>
                 );
