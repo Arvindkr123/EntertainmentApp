@@ -8,7 +8,7 @@ const PaginationComponent = (props) => {
     //console.log("hello", e.selected);
     let pageNo = parseInt(e.selected) + 1;
     handleClick(pageNo);
-    window.scrollTo(0, 1);
+    window.scrollTo(0, 0);
   };
 
   return (
